@@ -1,0 +1,1089 @@
+SELECT * FROM categories;
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+
+Query time: 66ms
+
+SELECT * FROM categories;
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+
+Query time: 60ms
+
+SELECT * FROM categories;
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+
+Query time: 56ms
+
+SELECT * FROM categories;
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+
+Query time: 55ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+
+Query time: 81ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 61ms
+
+SELECT * FROM orders;
+
+1 1 2024-12-01 2 160 
+2 4 2024-12-02 3 255 
+3 5 2024-12-05 5 600 
+4 5 2024-12-03 2 240 
+5 4 2024-11-25 6 510 
+6 3 2024-12-03 6 1800 
+
+Query time: 48ms
+
+SELECT categories.category_name, cat_sum.categories_sum FROM categories RIGHT JOIN cat_sum ON categories.categories_id = cat_sum.categories_id; 
+
+Soups 160 
+Drinks 1800 
+Porridge 765 
+Desserts 840 
+
+Query time: 48ms
+
+SELECT tot.total, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN tot ON dishes.dishes_id = tot.dishes_id ORDER BY total DESC LIMIT 3;
+
+9 Oatmeal 85 
+7 Tiramisu 120 
+6 Vodka 300 
+
+Query time: 47ms
+
+SELECT AVG(total_price) FROM orders;
+
+594.1666666666666667 
+
+Query time: 42ms
+
+SELECT totcount.totalcount, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN totcount ON dishes.dishes_id = totcount.dishes_id ORDER BY totalcount DESC; 
+
+2 Oatmeal 85 
+2 Tiramisu 120 
+1 Borsh 80 
+1 Vodka 300 
+
+Query time: 41ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+
+Query time: 50ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 55ms
+
+SELECT * FROM orders;
+
+1 1 2024-12-01 2 160 
+2 4 2024-12-02 3 255 
+3 5 2024-12-05 5 600 
+4 5 2024-12-03 2 240 
+5 4 2024-11-25 6 510 
+6 3 2024-12-03 6 1800 
+
+Query time: 46ms
+
+SELECT * FROM orders;
+
+1 1 2024-12-01 2 160 
+2 4 2024-12-02 3 255 
+3 5 2024-12-05 5 600 
+4 5 2024-12-03 2 240 
+5 4 2024-11-25 6 510 
+6 3 2024-12-03 6 1800 
+
+Query time: 46ms
+
+INSERT INTO orders(orders_id, dishes_id, order_date, quantity, total_price) VALUES (7,  8,  '2024-12-06',  5,  5 * (SELECT price FROM dishes WHERE dishes_id =  8)); 
+
+Query time: 40ms
+
+SELECT totcount.totalcount, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN totcount ON dishes.dishes_id = totcount.dishes_id ORDER BY totalcount DESC; 
+
+2 Oatmeal 85 
+2 Tiramisu 120 
+1 Borsh 80 
+1 Vodka 300 
+1 Water 40 
+
+Query time: 62ms
+
+SELECT tot.total, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN tot ON dishes.dishes_id = tot.dishes_id ORDER BY total DESC LIMIT 3;
+
+9 Oatmeal 85 
+7 Tiramisu 120 
+6 Vodka 300 
+
+Query time: 52ms
+
+SELECT tot.total, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN tot ON dishes.dishes_id = tot.dishes_id ORDER BY total DESC LIMIT 3;
+
+9 Oatmeal 85 
+7 Tiramisu 120 
+6 Vodka 300 
+
+Query time: 49ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+
+Query time: 61ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+
+Query time: 41ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+
+Query time: 43ms
+
+INSERT INTO categories(categories_id, category_name) VALUES (7, 'fdsfd');
+
+Query time: 39ms
+
+DELETE FROM categories WHERE categories_id = 7;
+
+Query time: 39ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 54ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+
+Query time: 48ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 50ms
+
+SELECT * FROM orders;
+
+1 1 2024-12-01 2 160 
+2 4 2024-12-02 3 255 
+3 5 2024-12-05 5 600 
+4 5 2024-12-03 2 240 
+5 4 2024-11-25 6 510 
+6 3 2024-12-03 6 1800 
+7 8 2024-12-06 5 200 
+
+Query time: 47ms
+
+SELECT categories.category_name, cat_sum.categories_sum FROM categories RIGHT JOIN cat_sum ON categories.categories_id = cat_sum.categories_id; 
+
+Soups 160 
+Drinks 1800 
+Porridge 765 
+Desserts 840 
+Drinks 200 
+
+Query time: 42ms
+
+SELECT tot.total, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN tot ON dishes.dishes_id = tot.dishes_id ORDER BY total DESC LIMIT 3;
+
+9 Oatmeal 85 
+7 Tiramisu 120 
+6 Vodka 300 
+
+Query time: 40ms
+
+SELECT AVG(total_price) FROM orders;
+
+537.8571428571428571 
+
+Query time: 150ms
+
+SELECT totcount.totalcount, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN totcount ON dishes.dishes_id = totcount.dishes_id ORDER BY totalcount DESC; 
+
+2 Oatmeal 85 
+2 Tiramisu 120 
+1 Borsh 80 
+1 Vodka 300 
+1 Water 40 
+
+Query time: 68ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+
+Query time: 168ms
+
+INSERT INTO categories(categories_id, category_name) VALUES (7, 'Pizza');
+
+Query time: 38ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 61ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 149ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 52ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 50ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 47ms
+
+SELECT * FROM orders;
+
+1 1 2024-12-01 2 160 
+2 4 2024-12-02 3 255 
+3 5 2024-12-05 5 600 
+4 5 2024-12-03 2 240 
+5 4 2024-11-25 6 510 
+6 3 2024-12-03 6 1800 
+7 8 2024-12-06 5 200 
+
+Query time: 46ms
+
+SELECT categories.category_name, cat_sum.categories_sum FROM categories RIGHT JOIN cat_sum ON categories.categories_id = cat_sum.categories_id; 
+
+Soups 160 
+Drinks 1800 
+Porridge 765 
+Desserts 840 
+Drinks 200 
+
+Query time: 225ms
+
+SELECT tot.total, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN tot ON dishes.dishes_id = tot.dishes_id ORDER BY total DESC LIMIT 3;
+
+9 Oatmeal 85 
+7 Tiramisu 120 
+6 Vodka 300 
+
+Query time: 39ms
+
+SELECT AVG(total_price) FROM orders;
+
+537.8571428571428571 
+
+Query time: 52ms
+
+SELECT totcount.totalcount, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN totcount ON dishes.dishes_id = totcount.dishes_id ORDER BY totalcount DESC; 
+
+2 Oatmeal 85 
+2 Tiramisu 120 
+1 Borsh 80 
+1 Vodka 300 
+1 Water 40 
+
+Query time: 44ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 39ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 47ms
+
+SELECT * FROM orders;
+
+1 1 2024-12-01 2 160 
+2 4 2024-12-02 3 255 
+3 5 2024-12-05 5 600 
+4 5 2024-12-03 2 240 
+5 4 2024-11-25 6 510 
+6 3 2024-12-03 6 1800 
+7 8 2024-12-06 5 200 
+
+Query time: 45ms
+
+SELECT categories.category_name, cat_sum.categories_sum FROM categories RIGHT JOIN cat_sum ON categories.categories_id = cat_sum.categories_id; 
+
+Soups 160 
+Drinks 1800 
+Porridge 765 
+Desserts 840 
+Drinks 200 
+
+Query time: 41ms
+
+SELECT tot.total, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN tot ON dishes.dishes_id = tot.dishes_id ORDER BY total DESC LIMIT 3;
+
+9 Oatmeal 85 
+7 Tiramisu 120 
+6 Vodka 300 
+
+Query time: 158ms
+
+SELECT AVG(total_price) FROM orders;
+
+537.8571428571428571 
+
+Query time: 38ms
+
+SELECT totcount.totalcount, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN totcount ON dishes.dishes_id = totcount.dishes_id ORDER BY totalcount DESC; 
+
+2 Oatmeal 85 
+2 Tiramisu 120 
+1 Borsh 80 
+1 Vodka 300 
+1 Water 40 
+
+Query time: 49ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 41ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 46ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 53ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 52ms
+
+SELECT * FROM orders;
+
+1 1 2024-12-01 2 160 
+2 4 2024-12-02 3 255 
+3 5 2024-12-05 5 600 
+4 5 2024-12-03 2 240 
+5 4 2024-11-25 6 510 
+6 3 2024-12-03 6 1800 
+7 8 2024-12-06 5 200 
+
+Query time: 46ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 49ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 52ms
+
+SELECT * FROM orders;
+
+1 1 2024-12-01 2 160 
+2 4 2024-12-02 3 255 
+3 5 2024-12-05 5 600 
+4 5 2024-12-03 2 240 
+5 4 2024-11-25 6 510 
+6 3 2024-12-03 6 1800 
+7 8 2024-12-06 5 200 
+
+Query time: 57ms
+
+SELECT categories.category_name, cat_sum.categories_sum FROM categories RIGHT JOIN cat_sum ON categories.categories_id = cat_sum.categories_id; 
+
+Soups 160 
+Drinks 1800 
+Porridge 765 
+Desserts 840 
+Drinks 200 
+
+Query time: 68ms
+
+SELECT tot.total, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN tot ON dishes.dishes_id = tot.dishes_id ORDER BY total DESC LIMIT 3;
+
+9 Oatmeal 85 
+7 Tiramisu 120 
+6 Vodka 300 
+
+Query time: 48ms
+
+SELECT AVG(total_price) FROM orders;
+
+537.8571428571428571 
+
+Query time: 65ms
+
+SELECT totcount.totalcount, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN totcount ON dishes.dishes_id = totcount.dishes_id ORDER BY totalcount DESC; 
+
+2 Oatmeal 85 
+2 Tiramisu 120 
+1 Borsh 80 
+1 Vodka 300 
+1 Water 40 
+
+Query time: 67ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 66ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 73ms
+
+SELECT * FROM orders;
+
+1 1 2024-12-01 2 160 
+2 4 2024-12-02 3 255 
+3 5 2024-12-05 5 600 
+4 5 2024-12-03 2 240 
+5 4 2024-11-25 6 510 
+6 3 2024-12-03 6 1800 
+7 8 2024-12-06 5 200 
+
+Query time: 55ms
+
+SELECT categories.category_name, cat_sum.categories_sum FROM categories RIGHT JOIN cat_sum ON categories.categories_id = cat_sum.categories_id; 
+
+Soups 160 
+Drinks 1800 
+Porridge 765 
+Desserts 840 
+Drinks 200 
+
+Query time: 82ms
+
+SELECT tot.total, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN tot ON dishes.dishes_id = tot.dishes_id ORDER BY total DESC LIMIT 3;
+
+9 Oatmeal 85 
+7 Tiramisu 120 
+6 Vodka 300 
+
+Query time: 47ms
+
+SELECT AVG(total_price) FROM orders;
+
+537.8571428571428571 
+
+Query time: 82ms
+
+SELECT totcount.totalcount, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN totcount ON dishes.dishes_id = totcount.dishes_id ORDER BY totalcount DESC; 
+
+2 Oatmeal 85 
+2 Tiramisu 120 
+1 Borsh 80 
+1 Vodka 300 
+1 Water 40 
+
+Query time: 161ms
+
+SELECT AVG(total_price) FROM orders;
+
+537.8571428571428571 
+
+Query time: 51ms
+
+SELECT tot.total, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN tot ON dishes.dishes_id = tot.dishes_id ORDER BY total DESC LIMIT 3;
+
+9 Oatmeal 85 
+7 Tiramisu 120 
+6 Vodka 300 
+
+Query time: 73ms
+
+SELECT categories.category_name, cat_sum.categories_sum FROM categories RIGHT JOIN cat_sum ON categories.categories_id = cat_sum.categories_id; 
+
+Soups 160 
+Drinks 1800 
+Porridge 765 
+Desserts 840 
+Drinks 200 
+
+Query time: 88ms
+
+SELECT * FROM orders;
+
+1 1 2024-12-01 2 160 
+2 4 2024-12-02 3 255 
+3 5 2024-12-05 5 600 
+4 5 2024-12-03 2 240 
+5 4 2024-11-25 6 510 
+6 3 2024-12-03 6 1800 
+7 8 2024-12-06 5 200 
+
+Query time: 70ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 58ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 47ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 44ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 143ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 46ms
+
+SELECT * FROM orders;
+
+1 1 2024-12-01 2 160 
+2 4 2024-12-02 3 255 
+3 5 2024-12-05 5 600 
+4 5 2024-12-03 2 240 
+5 4 2024-11-25 6 510 
+6 3 2024-12-03 6 1800 
+7 8 2024-12-06 5 200 
+
+Query time: 47ms
+
+SELECT categories.category_name, cat_sum.categories_sum FROM categories RIGHT JOIN cat_sum ON categories.categories_id = cat_sum.categories_id; 
+
+Soups 160 
+Drinks 1800 
+Porridge 765 
+Desserts 840 
+Drinks 200 
+
+Query time: 43ms
+
+SELECT tot.total, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN tot ON dishes.dishes_id = tot.dishes_id ORDER BY total DESC LIMIT 3;
+
+9 Oatmeal 85 
+7 Tiramisu 120 
+6 Vodka 300 
+
+Query time: 43ms
+
+SELECT AVG(total_price) FROM orders;
+
+537.8571428571428571 
+
+Query time: 38ms
+
+SELECT totcount.totalcount, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN totcount ON dishes.dishes_id = totcount.dishes_id ORDER BY totalcount DESC; 
+
+2 Oatmeal 85 
+2 Tiramisu 120 
+1 Borsh 80 
+1 Vodka 300 
+1 Water 40 
+
+Query time: 48ms
+
+SELECT AVG(total_price) FROM orders;
+
+537.8571428571428571 
+
+Query time: 149ms
+
+SELECT tot.total, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN tot ON dishes.dishes_id = tot.dishes_id ORDER BY total DESC LIMIT 3;
+
+9 Oatmeal 85 
+7 Tiramisu 120 
+6 Vodka 300 
+
+Query time: 41ms
+
+SELECT categories.category_name, cat_sum.categories_sum FROM categories RIGHT JOIN cat_sum ON categories.categories_id = cat_sum.categories_id; 
+
+Soups 160 
+Drinks 1800 
+Porridge 765 
+Desserts 840 
+Drinks 200 
+
+Query time: 62ms
+
+SELECT * FROM orders;
+
+1 1 2024-12-01 2 160 
+2 4 2024-12-02 3 255 
+3 5 2024-12-05 5 600 
+4 5 2024-12-03 2 240 
+5 4 2024-11-25 6 510 
+6 3 2024-12-03 6 1800 
+7 8 2024-12-06 5 200 
+
+Query time: 50ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 47ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 49ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 45ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 42ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 43ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 47ms
+
+SELECT * FROM orders;
+
+1 1 2024-12-01 2 160 
+2 4 2024-12-02 3 255 
+3 5 2024-12-05 5 600 
+4 5 2024-12-03 2 240 
+5 4 2024-11-25 6 510 
+6 3 2024-12-03 6 1800 
+7 8 2024-12-06 5 200 
+
+Query time: 49ms
+
+SELECT categories.category_name, cat_sum.categories_sum FROM categories RIGHT JOIN cat_sum ON categories.categories_id = cat_sum.categories_id; 
+
+Soups 160 
+Drinks 1800 
+Porridge 765 
+Desserts 840 
+Drinks 200 
+
+Query time: 42ms
+
+SELECT tot.total, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN tot ON dishes.dishes_id = tot.dishes_id ORDER BY total DESC LIMIT 3;
+
+9 Oatmeal 85 
+7 Tiramisu 120 
+6 Vodka 300 
+
+Query time: 42ms
+
+SELECT AVG(total_price) FROM orders;
+
+537.8571428571428571 
+
+Query time: 39ms
+
+SELECT totcount.totalcount, dishes.dishes_name, dishes.price FROM dishes RIGHT JOIN totcount ON dishes.dishes_id = totcount.dishes_id ORDER BY totalcount DESC; 
+
+2 Oatmeal 85 
+2 Tiramisu 120 
+1 Borsh 80 
+1 Vodka 300 
+1 Water 40 
+
+Query time: 41ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 49ms
+
+SELECT * FROM dishes;
+
+1 Borsh 1 80 
+2 Turtle 5 70 
+3 Vodka 2 300 
+4 Oatmeal 6 85 
+5 Tiramisu 4 120 
+6 Steak 3 350 
+7 Beer 2 80 
+8 Water 2 40 
+9 Napoleon cake 4 300 
+
+Query time: 46ms
+
+SELECT * FROM orders;
+
+1 1 2024-12-01 2 160 
+2 4 2024-12-02 3 255 
+3 5 2024-12-05 5 600 
+4 5 2024-12-03 2 240 
+5 4 2024-11-25 6 510 
+6 3 2024-12-03 6 1800 
+7 8 2024-12-06 5 200 
+
+Query time: 44ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+
+Query time: 45ms
+
+INSERT INTO categories(categories_id, category_name) VALUES (8, 'French');
+
+Query time: 40ms
+
+SELECT * FROM categories;
+
+1 Soups 
+2 Drinks 
+3 Main course 
+4 Desserts 
+5 Salads 
+6 Porridge 
+7 Pizza 
+8 French 
+
+Query time: 52ms
+
